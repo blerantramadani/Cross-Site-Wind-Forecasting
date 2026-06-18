@@ -21,8 +21,8 @@ import matplotlib.pyplot as plt
 # ============================================================
 RATED_POWER_KW = 2300
 CUT_IN_SPEED = 3.0
-RATED_SPEED = 12.0
-CUT_OUT_SPEED = 25.0
+RATED_SPEED = 12.0   # boundary for the cubic/flat split; saturation itself is enforced
+                     # by min(P_cubic, P_rated) and engages near 10.4 m/s at standard densityCUT_OUT_SPEED = 25.0
 
 ROTOR_DIAMETER = 101.0
 ROTOR_AREA = np.pi * (ROTOR_DIAMETER / 2) ** 2
@@ -167,8 +167,9 @@ def plot_power_curve(temperature_c=15.0):
     plt.plot(wind_speeds, power, color='#0D9488', linewidth=2)
     plt.axvline(x=CUT_IN_SPEED, color='red', linestyle='--', alpha=0.6,
                 label=f'Cut-in ({CUT_IN_SPEED} m/s)')
-    plt.axvline(x=RATED_SPEED, color='orange', linestyle='--', alpha=0.6,
-                label=f'Rated ({RATED_SPEED} m/s)')
+    v_rated_actual = (RATED_POWER_KW * 1000 / (0.5 * 1.225 * ROTOR_AREA * CP_EFFECTIVE)) ** (1/3)
+    plt.axvline(x=v_rated_actual, color='orange', linestyle='--', alpha=0.6,
+                label=f'Rated (~{v_rated_actual:.1f} m/s)')
     plt.axvline(x=CUT_OUT_SPEED, color='red', linestyle='--', alpha=0.6,
                 label=f'Cut-out ({CUT_OUT_SPEED} m/s)')
     plt.title(f"Aerodynamic Power Curve — PVE Bogdanci (T={temperature_c}°C)", fontsize=13)
