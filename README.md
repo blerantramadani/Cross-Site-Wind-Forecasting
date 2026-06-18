@@ -1,4 +1,4 @@
-# Wind-Power-Digital-Twin
+# Cross-Site-Wind-Forecasting
 
 Physics-informed Digital Twin and cross-site evaluation framework for LSTM-based wind power forecasting.
 
@@ -23,7 +23,7 @@ The framework is organized in three tiers:
 ## 2. Repository structure
 
 ```
-Wind-Power-Digital-Twin/
+Cross-Site-Wind-Forecasting/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
@@ -42,8 +42,8 @@ Wind-Power-Digital-Twin/
 The code was developed and tested with Python 3.10.
 
 ```bash
-git clone https://github.com/blerantramadani/Wind-Power-Digital-Twin.git
-cd Wind-Power-Digital-Twin
+git clone https://github.com/blerantramadani/Cross-Site-Wind-Forecasting.git
+cd Cross-Site-Wind-Forecasting
 pip install -r requirements.txt
 ```
 
