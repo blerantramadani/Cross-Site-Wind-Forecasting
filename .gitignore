@@ -13,8 +13,10 @@ results/
 *.h5
 *.keras
 
-# Data (download separately — see README Section 4)
-data/*.csv
+# Operational datasets — download from Zenodo (see README Section 4)
+data/Kelmarsh*.csv
+data/Penmanshiel*.csv
+# Synthetic datasets ARE included for exact reproducibility
 
 # OS
 .DS_Store
