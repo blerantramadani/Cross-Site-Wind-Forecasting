@@ -22,8 +22,8 @@ import matplotlib.pyplot as plt
 RATED_POWER_KW = 2300
 CUT_IN_SPEED = 3.0
 RATED_SPEED = 12.0   # boundary for the cubic/flat split; saturation itself is enforced
-                     # by min(P_cubic, P_rated) and engages near 10.4 m/s at standard densityCUT_OUT_SPEED = 25.0
-
+                     # by min(P_cubic, P_rated) and engages near 10.4 m/s at standard density
+CUT_OUT_SPEED = 25.0
 ROTOR_DIAMETER = 101.0
 ROTOR_AREA = np.pi * (ROTOR_DIAMETER / 2) ** 2
 CP_EFFECTIVE = 0.42
